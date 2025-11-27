@@ -1,0 +1,179 @@
+/* ------------------------------
+   PALETAS DE COLORES
+--------------------------------*/
+:root {
+    --pink: #ffb9d9;
+    --pink-light: #ffd6e8;
+    --pink-glow: #ff9ac6;
+
+    --dark-bg: #0f0f10;
+    --dark-card: #1b1b1e;
+    --dark-text: #f7f7f7;
+
+    --white: #ffffff;
+    --shadow: rgba(0,0,0,0.08);
+}
+
+/* Modo oscuro */
+.dark {
+    background: var(--dark-bg) !important;
+    color: var(--dark-text);
+}
+
+/* -----------------------------------
+   ESTILO GENERAL
+------------------------------------ */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: var(--pink-light);
+    color: #333;
+    transition: 0.4s ease;
+}
+
+.hero {
+    padding: 80px 0;
+    text-align: center;
+    background: linear-gradient(135deg, var(--pink), var(--pink-light));
+    color: white;
+    box-shadow: 0 10px 25px rgba(255, 80, 150, 0.25);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+/* ------- Ads -------- */
+.ads {
+    text-align: center;
+    padding: 12px;
+    color: #555;
+}
+
+/* -----------------------------------
+   TARJETA PRINCIPAL
+------------------------------------ */
+.converter-card {
+    background: white;
+    padding: 40px;
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px var(--shadow);
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
+
+.dark .converter-card {
+    background: var(--dark-card);
+}
+
+/* Lift-up animation */
+.lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 60px rgba(255, 0, 125, 0.25);
+}
+
+/* -----------------------------------
+   FORM
+------------------------------------ */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.input-block label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: 2px solid #eee;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 12px var(--pink-glow);
+}
+
+/* Resultado con efecto neon */
+#result {
+    background: var(--pink-light);
+    padding: 18px;
+    border-radius: 14px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 18px var(--pink);
+}
+
+.dark #result {
+    background: #27272a;
+    color: white;
+    box-shadow: 0 0 18px #ff3fa6;
+}
+
+/* -----------------------------------
+   DARK MODE SWITCH
+------------------------------------ */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch {
+    position: relative;
+    width: 55px;
+    height: 28px;
+    background: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slider {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+}
+
+input:checked + .slider {
+    transform: translateX(27px);
+    background: #ffd6f2;
+}
+
+.dark .switch {
+    background: #555;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #777;
+}
